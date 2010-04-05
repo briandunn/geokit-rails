@@ -18,3 +18,8 @@ sqlserver:
   mode: ODBC
   dsn: geokit_tests
   username: ruby
+
+sqlite:
+  adapter: sqlite3
+  database: test.sqlite3
+  
