@@ -432,7 +432,7 @@ module Geokit
         # to the database in use.
         def flat_distance_sql(origin, units)
           lat_degree_units = units_per_latitude_degree(units)
-          lng_degree_units = units_per_longitude_degree(origin.lat, units)
+          lng_degree_units = units_per_longitude_degree(origin.lat.to_f, units)
           
           adapter.flat_distance_sql(origin, lat_degree_units, lng_degree_units)
         end

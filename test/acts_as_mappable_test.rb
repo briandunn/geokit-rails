@@ -471,4 +471,9 @@ class ActsAsMappableTest < GeokitTestCase
     people = MockPerson.count(:origin => @location_a, :conditions => "distance < 3.97")
     assert_equal 2, people
   end 
+
+  def test_square_formula_with_nil_origin_should_not_raise
+    CustomLocation.all(:origin => Geokit::GeoLoc.new, :order => :dist)
+  end
+
 end
